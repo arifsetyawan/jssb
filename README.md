@@ -6,12 +6,12 @@ A TypeScript library and CLI tool to generate JSON schemas from sample JSON data
 
 ### Global Installation (CLI)
 ```bash
-npm install -g jsonschema-builder
+npm install -g jssb-cli
 ```
 
 ### Local Installation (Library)
 ```bash
-npm install jsonschema-builder
+npm install jssb-cli
 ```
 
 ## CLI Usage
