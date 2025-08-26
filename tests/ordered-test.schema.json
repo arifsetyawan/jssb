@@ -1,0 +1,225 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Test-data",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100,
+      "examples": [
+        "John Doe"
+      ]
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 15,
+      "maximum": 45,
+      "examples": [
+        30
+      ]
+    },
+    "email": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100,
+      "format": "email",
+      "examples": [
+        "john.doe@example.com"
+      ]
+    },
+    "isActive": {
+      "type": "boolean",
+      "examples": [
+        true
+      ]
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 100,
+          "examples": [
+            "123 Main St"
+          ]
+        },
+        "city": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 100,
+          "examples": [
+            "New York"
+          ]
+        },
+        "zipCode": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 100,
+          "examples": [
+            "10001"
+          ]
+        },
+        "coordinates": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number",
+              "minimum": 20.3564,
+              "maximum": 61.0692,
+              "examples": [
+                40.7128
+              ]
+            },
+            "lng": {
+              "type": "number",
+              "minimum": -111.009,
+              "maximum": -37.003,
+              "examples": [
+                -74.006
+              ]
+            }
+          },
+          "required": [
+            "lat",
+            "lng"
+          ],
+          "additionalProperties": false,
+          "examples": [
+            {
+              "lat": 40.7128,
+              "lng": -74.006
+            }
+          ]
+        }
+      },
+      "required": [
+        "street",
+        "city",
+        "zipCode",
+        "coordinates"
+      ],
+      "additionalProperties": false,
+      "examples": [
+        {
+          "street": "123 Main St",
+          "city": "New York",
+          "zipCode": "10001",
+          "coordinates": {
+            "lat": 40.7128,
+            "lng": -74.006
+          }
+        }
+      ]
+    },
+    "hobbies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 0,
+        "maxLength": 100,
+        "examples": [
+          "reading"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "examples": [
+        [
+          "reading",
+          "swimming",
+          "coding"
+        ]
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 100,
+          "format": "date-time",
+          "examples": [
+            "2024-01-15T10:30:00.000Z"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 100,
+            "examples": [
+              "premium"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 100,
+          "uniqueItems": true,
+          "examples": [
+            [
+              "premium",
+              "verified"
+            ]
+          ]
+        }
+      },
+      "required": [
+        "createdAt",
+        "tags"
+      ],
+      "additionalProperties": false,
+      "examples": [
+        {
+          "createdAt": "2024-01-15T10:30:00.000Z",
+          "tags": [
+            "premium",
+            "verified"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "age",
+    "email",
+    "isActive",
+    "address",
+    "hobbies",
+    "metadata"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "name": "John Doe",
+      "age": 30,
+      "email": "john.doe@example.com",
+      "isActive": true,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "zipCode": "10001",
+        "coordinates": {
+          "lat": 40.7128,
+          "lng": -74.006
+        }
+      },
+      "hobbies": [
+        "reading",
+        "swimming",
+        "coding"
+      ],
+      "metadata": {
+        "createdAt": "2024-01-15T10:30:00.000Z",
+        "tags": [
+          "premium",
+          "verified"
+        ]
+      }
+    }
+  ]
+}

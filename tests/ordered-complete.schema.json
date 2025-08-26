@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Complete Test Schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100,
+      "format": "uuid",
+      "examples": [
+        "550e8400-e29b-41d4-a716-446655440000"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100,
+      "examples": [
+        "Test Schema"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100,
+      "examples": [
+        "active"
+      ]
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 21,
+      "maximum": 63,
+      "examples": [
+        42
+      ]
+    },
+    "price": {
+      "type": "number",
+      "minimum": 49.995,
+      "maximum": 149.98499999999999,
+      "examples": [
+        99.99
+      ]
+    },
+    "isEnabled": {
+      "type": "boolean",
+      "examples": [
+        true
+      ]
+    },
+    "config": {
+      "type": "object",
+      "properties": {
+        "theme": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 100,
+          "examples": [
+            "dark"
+          ]
+        },
+        "notifications": {
+          "type": "boolean",
+          "examples": [
+            true
+          ]
+        }
+      },
+      "required": [
+        "theme",
+        "notifications"
+      ],
+      "additionalProperties": false,
+      "examples": [
+        {
+          "theme": "dark",
+          "notifications": true
+        }
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 0,
+        "maxLength": 100,
+        "examples": [
+          "premium"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "examples": [
+        [
+          "premium",
+          "verified"
+        ]
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "created": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 100,
+          "format": "date-time",
+          "examples": [
+            "2024-01-15T10:30:00.000Z"
+          ]
+        }
+      },
+      "required": [
+        "created"
+      ],
+      "additionalProperties": false,
+      "examples": [
+        {
+          "created": "2024-01-15T10:30:00.000Z"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "status",
+    "count",
+    "price",
+    "isEnabled",
+    "config",
+    "tags",
+    "metadata"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "Test Schema",
+      "status": "active",
+      "count": 42,
+      "price": 99.99,
+      "isEnabled": true,
+      "config": {
+        "theme": "dark",
+        "notifications": true
+      },
+      "tags": [
+        "premium",
+        "verified"
+      ],
+      "metadata": {
+        "created": "2024-01-15T10:30:00.000Z"
+      }
+    }
+  ]
+}

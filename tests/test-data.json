@@ -1,0 +1,20 @@
+{
+  "name": "John Doe",
+  "age": 30,
+  "email": "john.doe@example.com",
+  "isActive": true,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "zipCode": "10001",
+    "coordinates": {
+      "lat": 40.7128,
+      "lng": -74.0060
+    }
+  },
+  "hobbies": ["reading", "swimming", "coding"],
+  "metadata": {
+    "createdAt": "2024-01-15T10:30:00.000Z",
+    "tags": ["premium", "verified"]
+  }
+}

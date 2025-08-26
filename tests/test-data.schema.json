@@ -1,0 +1,225 @@
+{
+  "type": "object",
+  "examples": [
+    {
+      "name": "John Doe",
+      "age": 30,
+      "email": "john.doe@example.com",
+      "isActive": true,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "zipCode": "10001",
+        "coordinates": {
+          "lat": 40.7128,
+          "lng": -74.006
+        }
+      },
+      "hobbies": [
+        "reading",
+        "swimming",
+        "coding"
+      ],
+      "metadata": {
+        "createdAt": "2024-01-15T10:30:00.000Z",
+        "tags": [
+          "premium",
+          "verified"
+        ]
+      }
+    }
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "examples": [
+        "John Doe"
+      ],
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "age": {
+      "type": "integer",
+      "examples": [
+        30
+      ],
+      "minimum": 15,
+      "maximum": 45
+    },
+    "email": {
+      "type": "string",
+      "examples": [
+        "john.doe@example.com"
+      ],
+      "minLength": 0,
+      "maxLength": 100,
+      "format": "email"
+    },
+    "isActive": {
+      "type": "boolean",
+      "examples": [
+        true
+      ]
+    },
+    "address": {
+      "type": "object",
+      "examples": [
+        {
+          "street": "123 Main St",
+          "city": "New York",
+          "zipCode": "10001",
+          "coordinates": {
+            "lat": 40.7128,
+            "lng": -74.006
+          }
+        }
+      ],
+      "properties": {
+        "street": {
+          "type": "string",
+          "examples": [
+            "123 Main St"
+          ],
+          "minLength": 0,
+          "maxLength": 100
+        },
+        "city": {
+          "type": "string",
+          "examples": [
+            "New York"
+          ],
+          "minLength": 0,
+          "maxLength": 100
+        },
+        "zipCode": {
+          "type": "string",
+          "examples": [
+            "10001"
+          ],
+          "minLength": 0,
+          "maxLength": 100
+        },
+        "coordinates": {
+          "type": "object",
+          "examples": [
+            {
+              "lat": 40.7128,
+              "lng": -74.006
+            }
+          ],
+          "properties": {
+            "lat": {
+              "type": "number",
+              "examples": [
+                40.7128
+              ],
+              "minimum": 20.3564,
+              "maximum": 61.0692
+            },
+            "lng": {
+              "type": "number",
+              "examples": [
+                -74.006
+              ],
+              "minimum": -111.009,
+              "maximum": -37.003
+            }
+          },
+          "required": [
+            "lat",
+            "lng"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "street",
+        "city",
+        "zipCode",
+        "coordinates"
+      ],
+      "additionalProperties": false
+    },
+    "hobbies": {
+      "type": "array",
+      "examples": [
+        [
+          "reading",
+          "swimming",
+          "coding"
+        ]
+      ],
+      "minItems": 0,
+      "maxItems": 100,
+      "items": {
+        "type": "string",
+        "examples": [
+          "reading"
+        ],
+        "minLength": 0,
+        "maxLength": 100
+      },
+      "uniqueItems": true
+    },
+    "metadata": {
+      "type": "object",
+      "examples": [
+        {
+          "createdAt": "2024-01-15T10:30:00.000Z",
+          "tags": [
+            "premium",
+            "verified"
+          ]
+        }
+      ],
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "examples": [
+            "2024-01-15T10:30:00.000Z"
+          ],
+          "minLength": 0,
+          "maxLength": 100,
+          "format": "date-time"
+        },
+        "tags": {
+          "type": "array",
+          "examples": [
+            [
+              "premium",
+              "verified"
+            ]
+          ],
+          "minItems": 0,
+          "maxItems": 100,
+          "items": {
+            "type": "string",
+            "examples": [
+              "premium"
+            ],
+            "minLength": 0,
+            "maxLength": 100
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "createdAt",
+        "tags"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name",
+    "age",
+    "email",
+    "isActive",
+    "address",
+    "hobbies",
+    "metadata"
+  ],
+  "additionalProperties": false,
+  "title": "Test-data",
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

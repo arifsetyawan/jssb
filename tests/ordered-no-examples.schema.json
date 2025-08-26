@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "No Examples Schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100,
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "status": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 21,
+      "maximum": 63
+    },
+    "price": {
+      "type": "number",
+      "minimum": 49.995,
+      "maximum": 149.98499999999999
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "config": {
+      "type": "object",
+      "properties": {
+        "theme": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 100
+        },
+        "notifications": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "theme",
+        "notifications"
+      ],
+      "additionalProperties": false
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 0,
+        "maxLength": 100
+      },
+      "minItems": 0,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "created": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 100,
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "created"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "status",
+    "count",
+    "price",
+    "isEnabled",
+    "config",
+    "tags",
+    "metadata"
+  ],
+  "additionalProperties": false
+}

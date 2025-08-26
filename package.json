@@ -1,0 +1,43 @@
+{
+  "name": "jssb",
+  "version": "1.0.0",
+  "description": "A TypeScript library and CLI tool to generate JSON schemas from sample JSON data",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "jssb": "./bin/jssb.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "example": "ts-node examples/example.ts",
+    "test": "echo \"No tests configured yet\"",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "json",
+    "schema",
+    "json-schema",
+    "builder",
+    "generator",
+    "typescript",
+    "cli",
+    "command-line"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist",
+    "src",
+    "bin"
+  ]
+}
